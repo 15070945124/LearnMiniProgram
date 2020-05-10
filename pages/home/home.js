@@ -5,7 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name: 'CoderWhy',
+    age:  18,
+    students: [
+      {id: 110,name: "kode",age: 20},
+      {id: 111,name: "james",age: 22},
+      {id: 112,name: "curry",age: 32},
+      {id: 113,name: "why",age: 18}
+    ],
+    counter: 0
+  },
+  handleBtnClick(){
+    // 1.错误做法：页面是不会刷新的
+    // this.data.counter ++
+    // console.log(this.data.counter)
 
+    // 2.this.setData()
+    this.setData({
+      counter: ++this.data.counter
+    })
+  },
+  handleSubracyionClick(){
+    this.setData({
+      counter: --this.data.counter
+    })
   },
 
   /**
